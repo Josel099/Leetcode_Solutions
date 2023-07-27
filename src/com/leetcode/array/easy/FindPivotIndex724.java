@@ -31,3 +31,4 @@ class pivotIndex {
     return -1;
     }
 }
+// time complexity : O(2n) = O(n)

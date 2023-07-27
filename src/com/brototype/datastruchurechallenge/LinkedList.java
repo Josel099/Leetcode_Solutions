@@ -48,7 +48,7 @@ public class LinkedList {
           tail.next=null;
           return;
           }
-          prev.next=temp.next;
+          prev.next=temp.next; //  deleting in between two nodes
      }
 // insert an node
      void insertAfter(int nextTo,int data){
@@ -58,6 +58,7 @@ public class LinkedList {
 
           if(temp == null){
                addNode(data);
+               return;
           }
           while(temp != null && temp.data != nextTo){
                temp=temp.next;
