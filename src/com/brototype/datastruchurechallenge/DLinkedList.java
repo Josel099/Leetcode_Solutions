@@ -122,26 +122,27 @@ public class DLinkedList {
     }
 
 // REMOVING DUPLICATE IN AN DOUBLY LINKED LIST OPERATION :condition -> the duplicate elements are adjacent
+    // Time complexity = O(n)
+    // Space complexity = O(1)
     void removeDuplicate(){
         Node temp = head;
-        Node nextNode = null;
+
         while( temp != tail ){
-            nextNode = temp.next ;
-
-            if(temp.data == nextNode.data){
-                while(temp.data == nextNode.data) {
+          Node  nextNode = temp.next ;
+            if( temp.data == nextNode.data )
+            {
+                while(temp.data == nextNode.data)
+                {
                     nextNode = nextNode.next; // looping for finding the edge of adjusent duplicate nodes !
-                    if(nextNode == null ) break; // exit the while loop if the nextNode is null , ie, the DoublyLikedList is ended !
+                    if(nextNode == null)  // checking the nextNode pointer at the tail node
+                    {
+                        tail = temp;
+                        tail.next = null;
+                        return; // exit the while loop if the nextNode is null , ie, the DoublyLikedList is ended !
+                     }
                 }
-
-                if(nextNode == null){ // checking the nextNode pointer at the tail node
-                    tail = temp;
-                    tail.next = null;
-                    return;
-                }else {
                     temp.next = nextNode;
                     nextNode.prev = temp;
-                }
             }
             temp = temp.next;
         }
@@ -183,9 +184,9 @@ public class DLinkedList {
     public static void main(String[] args){
 
         DLinkedList newLinkedlist= new DLinkedList();
-        newLinkedlist.addNode(2);
-        newLinkedlist.addNode(22);
         newLinkedlist.addNode(12);
+        newLinkedlist.addNode(2);
+        newLinkedlist.addNode(3);
         newLinkedlist.addNode(3);
         newLinkedlist.addNode(3);
 

@@ -77,6 +77,14 @@ public class LinkedList {
           newNode.next = temp.next;
           temp.next = newNode;
      }
+//   REVERSE THE SINGLYLINKEDLIST :::!!!!
+     void reverse(){
+        Node  temp = head;
+        // pending
+
+     }
+
+
 
      void display(){
 
