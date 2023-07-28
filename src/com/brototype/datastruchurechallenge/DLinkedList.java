@@ -121,6 +121,34 @@ public class DLinkedList {
         after.prev = temp.prev;
     }
 
+// REMOVING DUPLICATE IN AN DOUBLY LINKED LIST OPERATION :condition -> the duplicate elements are adjacent
+    void removeDuplicate(){
+        Node temp = head;
+        Node nextNode = null;
+        while( temp != tail ){
+            nextNode = temp.next ;
+
+            if(temp.data == nextNode.data){
+                while(temp.data == nextNode.data) {
+                    nextNode = nextNode.next; // looping for finding the edge of adjusent duplicate nodes !
+                    if(nextNode == null ) break; // exit the while loop if the nextNode is null , ie, the DoublyLikedList is ended !
+                }
+
+                if(nextNode == null){ // checking the nextNode pointer at the tail node
+                    tail = temp;
+                    tail.next = null;
+                    return;
+                }else {
+                    temp.next = nextNode;
+                    nextNode.prev = temp;
+                }
+            }
+            temp = temp.next;
+        }
+    }
+
+
+
 
     void display(){
 
@@ -155,21 +183,17 @@ public class DLinkedList {
     public static void main(String[] args){
 
         DLinkedList newLinkedlist= new DLinkedList();
-        newLinkedlist.addNode(19);
-        newLinkedlist.addNode(10);
-        newLinkedlist.addNode(1);
-        newLinkedlist.addNode(4);
         newLinkedlist.addNode(2);
+        newLinkedlist.addNode(22);
+        newLinkedlist.addNode(12);
+        newLinkedlist.addNode(3);
+        newLinkedlist.addNode(3);
 
         newLinkedlist.display();
         System.out.println(" \t");
         //newLinkedlist.displayReverse();
-        newLinkedlist.insertBefore(4,5);
+        //newLinkedlist.insertBefore(4,5);
+        newLinkedlist.removeDuplicate();
         newLinkedlist.display();
-
-//          newLinkedlist.delete(2);
-//          newLinkedlist.delete(4);
-//          newLinkedlist.delete(19);
-//          newLinkedlist.display();
     }
 }
