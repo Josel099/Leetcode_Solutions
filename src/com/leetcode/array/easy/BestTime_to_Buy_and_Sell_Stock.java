@@ -12,12 +12,12 @@ public class BestTime_to_Buy_and_Sell_Stock {
         for(int i=0;i<n;i++){
             prices[i]=sc.nextInt();
         }
-        Solution s = new Solution();
+        Solution11 s = new Solution11();
         System.out.println(s.maxProfit(prices));
 
     }
 }
-class Solution {
+class Solution11 {
     public int maxProfit(int[] prices) {
         int buy=Integer.MAX_VALUE;
         int profit=0;
