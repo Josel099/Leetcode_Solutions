@@ -22,7 +22,7 @@ class squareofsortedarray977 {
 }
 
 // optimized solution with linear time complexity : O(n)
-class Solution {
+class Solution977 {
     public int[] sortedSquares(int[] nums) {
 
         int left =0 ;
