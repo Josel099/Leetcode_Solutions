@@ -34,7 +34,7 @@ class Solution118 {
 }
 
 // better solution with combinations nCr  : n-1 C r-1
-
+// time complexity = O(n) 
 class betterSolution188{
     public List<List<Integer>> generate(int numRows) {
 
