@@ -12,20 +12,27 @@ class Solution56 {
 
        List<int[]> mergedArray = new ArrayList<>();
 
-        Arrays.sort(intervals,(a,b) -> a[0] - b[0]);
-        for (int i = 0; i < intervals.length - 1; i += 2) {
+        Arrays.sort(intervals,(a,b) -> a[0] - b[0]); //lambda expression
 
-            if (intervals[i][1] >= intervals[i + 1][0]) {
+        //mergedArray.add(intervals[0]);
 
-                mergedArray.get(i)[0] = intervals[i][0];
-                mergedArray.get(i)[1] = intervals[i + 1][1];
+        int[] newInterval = intervals[0] ;
 
-            } else {
-                mergedArray.add(intervals[i]);
+        for(int[] interval : intervals){
+
+            if(newInterval[1] >=  interval[0]){
+
+                newInterval[1] = Math.max(newInterval[1],interval[1]);
             }
-
-
+            else{
+                    mergedArray.add(newInterval);
+                    newInterval = interval;
+            }
         }
+        mergedArray.add(newInterval);// in this method last interval is not added to the finelArray by the for loop so we additionly add the remaining interval to the result .
         return mergedArray.toArray(new int[mergedArray.size()][]);
     }
 }
+
+//    Time Complexity: O(n log n) for sorting + O(n) for iteration and conversion = O(n log n)
+//        Space Complexity: O(n) for the ArrayList + O(n) for the output array = O(n)
