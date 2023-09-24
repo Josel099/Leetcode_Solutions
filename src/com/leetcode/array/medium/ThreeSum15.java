@@ -25,8 +25,8 @@ public class ThreeSum15 {
                     k--;
                 }
                 // Skip duplicates for the second and third elements of the triplet.
-
-
+                while (j < nums.length - 1 && nums[j] == nums[j + 1]) j++;
+                while (k >= i + 1 && nums[k] == nums[k - 1]) k--;
             }
 
          }
