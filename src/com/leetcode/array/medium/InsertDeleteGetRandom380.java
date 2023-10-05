@@ -20,8 +20,8 @@ class RandomizedSet {
        if( elementToIndex.containsKey(val)){
            return false;
        }else{
-           elementToIndex. put(val,elements.size()-1);
            elements.add(val);
+           elementToIndex. put(val,elements.size()-1);
            return true;
        }
 
