@@ -1,5 +1,7 @@
 package com.leetcode.array.medium;
 
+import java.util.HashMap;
+
 public class SubarraySumEqualsK560 {
 
 }
@@ -22,8 +24,24 @@ class Solution560 {  // bruteforce approach
     }
 }
 
-class Solution5602{
-    public int subarraySum(int[] nums , int k ) {
+//Optimal Soloution
 
+class Solution602{
+    public int subarraySum(int[] nums , int k ) {
+        int sum=0 ;
+        int count=0 ;
+        HashMap<Integer,Integer> hashMap= new HashMap<>();
+        hashMap.put(0,1);
+        for(int i = 0 ; i< nums.length ; i++){
+            sum = sum + nums[i];
+            if(hashMap.containsKey(sum-k)){ // checking the hashMap contains the
+                count= count+hashMap.get(sum-k);
+            }
+            if(hashMap.containsKey(sum)) // Check if the key is already present in the HashMap
+                hashMap.put(sum, hashMap.get(sum)+1); // Key is present, increment the value by 1
+            else  hashMap.put(sum,1);
+
+        }
+        return count;
     }
 }
