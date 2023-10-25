@@ -34,7 +34,7 @@ class Solution602{
         hashMap.put(0,1);
         for(int i = 0 ; i< nums.length ; i++){
             sum = sum + nums[i];
-            if(hashMap.containsKey(sum-k)){ // checking the hashMap contains the
+            if(hashMap.containsKey(sum-k)){ // checking the hashMap contains the sum-k
                 count= count+hashMap.get(sum-k);
             }
             if(hashMap.containsKey(sum)) // Check if the key is already present in the HashMap
