@@ -1,4 +1,4 @@
-package com.leetcode.array.easy;
+package com.random.practice;
 
 public class PaliendromNumber {
 
@@ -12,7 +12,6 @@ public class PaliendromNumber {
         while (temp != 0) {
             reverse = reverse * 10 + (temp % 10);
             temp = temp / 10;
-//            System.out.println("reverse string:" : reverse + "temp string:"+ temp +);
         }
         return Math.abs(x) == reverse;
     }

@@ -1,4 +1,4 @@
-package com.leetcode.array.easy;
+package com.random.practice;
 
 public class FindIndexofFirstOccurrenceinString {
 
@@ -6,7 +6,8 @@ public class FindIndexofFirstOccurrenceinString {
 
     }
 
-
     public int strStr(String haystack, String needle) {
-            return haystack.indexOf(needle);
-    }}
+        return haystack.indexOf(needle);
+    }
+
+}
